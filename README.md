@@ -1,6 +1,7 @@
 # GroupPolicy-WindowsLAPS
 
 Please download these 2 KBs
+
 https://www.catalog.update.microsoft.com/Search.aspx?q=KB5025230
 https://www.catalog.update.microsoft.com/Search.aspx?q=KB5025229
 
