@@ -66,7 +66,7 @@ if ($HotFixInstalled -eq $false)
     }
 }
 
-Update-LapsADSchema -Confirm $false
+Update-LapsADSchema -Confirm:$false
 
 $OUs = Get-ADOrganizationalUnit -Filter * -SearchScope OneLevel
 foreach ($OU in $OUs)
