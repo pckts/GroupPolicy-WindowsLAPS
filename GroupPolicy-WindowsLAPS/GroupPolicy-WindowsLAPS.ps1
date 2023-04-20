@@ -42,10 +42,11 @@ if ($HotFixInstalled -eq $false)
         Start-Process -FilePath "wusa.exe" -ArgumentList "$dirPath\KB5025230.msu /quiet /norestart" -Wait
         Clear-Host
         Write-Host "KB5025230 is now installed..."
-        Write-Host "The server will restart in 30 seconds to apply the changes."
-        sleep 5
+        Write-Host "The server will now restart to apply the changes."
+        Write-Host ""
+        Write-Host "Please re-run this script when the server is back online"
+        pause
         Restart-Computer
-        exit
     }
     else 
     {
@@ -57,10 +58,11 @@ if ($HotFixInstalled -eq $false)
         Start-Process -FilePath "wusa.exe" -ArgumentList "$dirPath\KB5025229.msu /quiet /norestart" -Wait
         Clear-Host
         Write-Host "KB5025229 is now installed..."
-        Write-Host "The server will restart in 30 seconds to apply the changes."
-        sleep 5
+        Write-Host "The server will now restart to apply the changes."
+        Write-Host ""
+        Write-Host "Please re-run this script when the server is back online"
+        pause
         Restart-Computer
-        exit
     }
 }
 
