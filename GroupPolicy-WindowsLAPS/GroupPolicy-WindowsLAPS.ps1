@@ -82,7 +82,7 @@ if ($null -ne $DoesGPOExist)
 
 $Partition = Get-ADDomainController | Select-Object DefaultPartition
 $GPOSource = "$dirPath\WindowsLAPS"
-import-gpo -BackupId 2B7ED803-C83D-4F74-8BD9-5690D0C0251F -TargetName WindowsLAPS -path $GPOSource -CreateIfNeeded
+import-gpo -BackupId 90CF6CF6-D8B8-4C60-9FFD-63169C98F4D9 -TargetName WindowsLAPS -path $GPOSource -CreateIfNeeded
 Get-GPO -Name "WindowsLAPS" | New-GPLink -Target $Partition.DefaultPartition
 Set-GPLink -Name "WindowsLAPS" -Enforced Yes -Target $Partition.DefaultPartition
 $DisabledInheritances = Get-ADOrganizationalUnit -Filter * | Get-GPInheritance | Where-Object {$_.GPOInheritanceBlocked} | select-object Path 
