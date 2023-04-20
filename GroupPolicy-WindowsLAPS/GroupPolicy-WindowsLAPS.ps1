@@ -24,7 +24,8 @@ $HotFixes = Get-Hotfix | Select-Object HotFixID
 $HotFixInstalled = $false
 foreach ($HotFix in $HotFixes) 
 {
-    if (($HotFix.HotFixID -match "KB5025230") -or ($HotFix.HotFixID -match "KB5025231")) {
+    if (($HotFix.HotFixID -match "KB5025230") -or ($HotFix.HotFixID -match "KB5025231")) 
+    {
         $HotFixInstalled = $true
         break
     }
@@ -36,7 +37,7 @@ if ($HotFixInstalled -eq $false)
         $scriptPath = $psISE.CurrentFile.FullPath
         $dirPath = Split-Path -Path $scriptPath -Parent
         Clear-Host
-        Write-Host "KB5025230 will now install..."
+        Write-Host "KB5025230 will now be installed..."
         Write-Host "Please be patient as this will take a while."
         Start-Process -FilePath "wusa.exe" -ArgumentList "$dirPath\KB5025230.msu /quiet /norestart" -Wait
         Clear-Host
@@ -51,7 +52,7 @@ if ($HotFixInstalled -eq $false)
         $scriptPath = $psISE.CurrentFile.FullPath
         $dirPath = Split-Path -Path $scriptPath -Parent
         Clear-Host
-        Write-Host "KB5025229 will now install..."
+        Write-Host "KB5025229 will now be installed..."
         Write-Host "Please be patient as this will take a while."
         Start-Process -FilePath "wusa.exe" -ArgumentList "$dirPath\KB5025229.msu /quiet /norestart" -Wait
         Clear-Host
