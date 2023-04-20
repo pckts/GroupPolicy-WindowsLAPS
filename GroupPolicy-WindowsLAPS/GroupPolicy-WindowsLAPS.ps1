@@ -42,7 +42,8 @@ if ($HotFixInstalled -eq $false)
         Clear-Host
         Write-Host "KB5025230 is now installed..."
         Write-Host "The server will restart in 30 seconds to apply the changes."
-        Restart-Computer -Force -Delay 30
+        sleep 5
+        Restart-Computer
         exit
     }
     else 
@@ -56,7 +57,8 @@ if ($HotFixInstalled -eq $false)
         Clear-Host
         Write-Host "KB5025229 is now installed..."
         Write-Host "The server will restart in 30 seconds to apply the changes."
-        Restart-Computer -Force -Delay 30
+        sleep 5
+        Restart-Computer
         exit
     }
 }
