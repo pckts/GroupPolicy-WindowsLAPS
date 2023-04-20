@@ -1,4 +1,6 @@
 $ProgressPreference = "SilentlyContinue"
+$scriptPath = $psISE.CurrentFile.FullPath
+$dirPath = Split-Path -Path $scriptPath -Parent
 
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 
@@ -34,8 +36,6 @@ if ($HotFixInstalled -eq $false)
 {
     if ($OSVersion -match '2022')
     {
-        $scriptPath = $psISE.CurrentFile.FullPath
-        $dirPath = Split-Path -Path $scriptPath -Parent
         Clear-Host
         Write-Host "KB5025230 will now be installed..."
         Write-Host "Please be patient as this will take a while."
@@ -50,8 +50,6 @@ if ($HotFixInstalled -eq $false)
     }
     else 
     {
-        $scriptPath = $psISE.CurrentFile.FullPath
-        $dirPath = Split-Path -Path $scriptPath -Parent
         Clear-Host
         Write-Host "KB5025229 will now be installed..."
         Write-Host "Please be patient as this will take a while."
