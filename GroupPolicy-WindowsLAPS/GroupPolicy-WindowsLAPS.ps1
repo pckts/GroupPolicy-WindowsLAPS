@@ -37,8 +37,10 @@ if ($HotFixInstalled -eq $false)
     if ($OSVersion -match '2022')
     {
         Clear-Host
-        Write-Host "KB5025230 will now be installed..."
+        Write-Host "KB5025230 will now be downloaded and installed..."
         Write-Host "Please be patient as this will take a while."
+        $URL = "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/04/windows10.0-kb5025230-x64_a73c874bf9a0f3a2c4df0b7bdeb29226c34ee9f0.msu"
+        Invoke-WebRequest -Uri $URL -OutFile $dirPath\KB5025230.msu
         Start-Process -FilePath "wusa.exe" -ArgumentList "$dirPath\KB5025230.msu /quiet /norestart" -Wait
         Clear-Host
         Write-Host "KB5025230 is now installed..."
@@ -51,8 +53,10 @@ if ($HotFixInstalled -eq $false)
     else 
     {
         Clear-Host
-        Write-Host "KB5025229 will now be installed..."
+        Write-Host "KB5025229 will now be downloaded and installed..."
         Write-Host "Please be patient as this will take a while."
+        $URL = "https://catalog.s.download.windowsupdate.com/d/msdownload/update/software/secu/2023/04/windows10.0-kb5025229-x64_51315f30dd290d51ba049760d7c107c4b90b27c7.msu"
+        Invoke-WebRequest -Uri $URL -OutFile $dirPath\KB5025229.msu
         Start-Process -FilePath "wusa.exe" -ArgumentList "$dirPath\KB5025229.msu /quiet /norestart" -Wait
         Clear-Host
         Write-Host "KB5025229 is now installed..."
